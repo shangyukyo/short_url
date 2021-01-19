@@ -1,0 +1,29 @@
+<%= content_for :assets do %>
+	<%= javascript_include_tag 'short_url.js'%>
+<%- end%>
+<div class="content clearfix">
+	<h5>短域名</h5>
+	<div class="list"></div>
+	<form class="needs-validation">
+		<div class="form-group ">
+			<input type="text" name="new_target" class="form-control" placeholder="url地址" required="true">	
+			<a class="mt-2 add btn btn-primary" href="javascript:;"  >添加短地址</a>
+		</div>
+	</form>
+
+</div>
+
+
+
+<script type="text/x-handlebars-template" id="urlView">
+	<input type="text" name="target" class="form-control" value="{{target}}">	
+	<div class="text-muted">
+		短地址: 
+		<a href="{{s_url}}" target="_blank">{{s_url}}</a>
+	</div>
+	<div class="text-muted">访问次数: {{visits}}</div>
+	<div class="text-muted">
+		管理页面:
+		<a href="{{admin_url}}" target="_blank">{{admin_url}}</a>
+	</div>
+</script>

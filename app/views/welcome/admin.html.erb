@@ -1,0 +1,6 @@
+<div>短地址: <%= @short_url.s_url%></div>
+<div>访问地址: <%= @short_url.target%></div>
+<div>状态: <%= @short_url.state%></div>
+<%- if @short_url.pending?%>
+	<%= link_to '禁止访问', block_path(@short_url.short_key), data: {confirm: '确定要禁止访问此网站吗'}, class: 'btn btn-danger'%>
+<%- end%>
